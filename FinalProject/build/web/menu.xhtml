@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:f="http://java.sun.com/jsf/core"  
+           
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>FOODCOURT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+   
+        <div id="footer">
+                <ui:include src="footer.xhtml"/>
+            </div>
+            <div id="header" style="padding-top: 8%; width: 100%;">
+                <ui:include src="header.xhtml"/>
+            </div>
+        <br></br>
+        <br/>
+        <h:form>
+    <p:growl id="growl" life="2000" />
+    
+    
+
+    
+    <p:commandButton value="Veg" update="rest_table" actionListener="#{inputTextareaView.vegMenuItem}" styleClass="ui-priority-primary" /> 
+    <p:commandButton value="Non-Veg" style="float:right;" update="rest_table" actionListener="#{inputTextareaView.nonVegMenuItem}" styleClass="ui-priority-primary" />    
+    <p:dataTable id="rest_table" value="#{inputTextareaView.menu}" var="menu">
+         
+            <p:ajax event="rowSelect" listener="#{inputTextareaView.onRowSelect}" update="" />
+            <p:column headerText="MENU">
+                <h:outputText value="#{menu.foodMenuItemName}" />
+    </p:column>
+ 
+ 
+    <p:column headerText="FOOD TYPE">
+        <h:outputText value="#{menu.menuId}" />
+    </p:column>
+ 
+    <p:column headerText="PRICE">
+        <h:outputText value="#{menu.price}" />
+    </p:column>
+ 
+    <p:column headerText="ADD TO CART">
+        <p:growl id="growl" life="2000" />
+                  <p:commandLink id="ajax" update="growl" actionListener="#{dataGridView.buttonAction}">
+                      <a href="menu_items.xhtml" ><h:outputText value="add"/></a>
+                  </p:commandLink>
+    </p:column>  
+    
+</p:dataTable>
+        
+        </h:form>
+        
+    </body>
+</html>

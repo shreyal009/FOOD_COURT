@@ -1,0 +1,35 @@
+.default
+{
+    background-color: burlywood;
+    margin-left: 33.3%;
+}
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+
+}
+
+
+.panelGrid
+{
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+
+#bottom {
+    position: relative;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+
+.footer {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}

@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9 Aug, 2016, 7:10:21 PM
+    Author     : root
+*/
+
+#header{
+    position: fixed;
+    margin: auto;
+    top:16.5%;
+    background-color: darkorange;
+    width: 100%;
+}
+
+#display{
+    
+    margin-top: 20%;
+    top: 50%;
+}
+#footer{
+    position: fixed;
+    margin: auto;
+    
+    width: 100%;
+}
+
+.ui-fieldset, .ui-fieldset .ui-fieldset-legend {
+    padding:0.6em 1em;
+}
+
+.ui-fieldset-toggleable .ui-fieldset-legend {
+    padding: 0.5em 1em 0.5em 0.5em;
+    cursor:pointer;
+    white-space: nowrap;
+}
+
+.ui-fieldset .ui-fieldset-toggler {
+    padding-right: .1em;
+    margin-top: 0.1em;
+    float:left;
+}

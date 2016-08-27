@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Love To Eat</title>
+    </h:head>
+    <h:outputStylesheet library="css" name="login.css"/>
+    <h:body style="background-color: lightgray">
+        
+        <h:form class="form">
+        
+            <p:messages autoUpdate="true"/>
+            <p:panelGrid columns="2" class="panelGrid">
+                <p:outputLabel for="cust_email" value="Email :  "/>
+                <p:inputText id="cust_email" value="#{customerMBean.custEmail}" required="true"/>
+                <p:outputLabel for="cust_pass" value="Password:  " />
+                <h:inputSecret id="cust_pass" value="#{customerMBean.custPass}" required="true"/>
+            </p:panelGrid>
+            <p:watermark for="cust_email" value="Enter Email"/>
+            <p:watermark for="cust_pass" value="Enter Password"/>
+            <p:commandButton value="Log In" style="margin-left: 45%" action="#{customerMBean.loginUser()}"/>
+            
+            </h:form>
+    </h:body>
+</html>

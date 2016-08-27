@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 Aug, 2016, 11:05:53 AM
+    Author     : root
+*/
+
+
+.links
+{
+    margin-left: 100px;
+    color: white;
+    font-size: 25px;
+}
+
+.footer
+{
+    background: darkslategray;
+    width: 100%;
+    
+}
+
+.w3-top{position:fixed;width:100%;z-index:1; top:0}
+
+.w3-navbar{list-style-type:none;margin:0;padding:0;overflow:hidden}
+.w3-navbar p{float:left}.w3-navbar p,.w3-navitem{display:block;padding:8px 16px}.w3-navbar p:hover{color:#000;background-color:#ccc}
+.w3-navbar .job-navbar{position:static}
+
+.w3-navbar p,.w3-dropnav a{text-decoration:none!important}
+.w3-navbar{float:right!important}.job-topnav{padding:8px 8px}
+
+.w3-navbar p{
+    -webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s
+}
+
+@media screen and (max-width:600px){.w3-topnav p{display:block}.w3-navbar p:not(.job-opennav){float:none;width:100%!important}.w3-navbar p.w3-right{text-align: center;}} 
+@media screen and (max-width:600px){.w3-navbar ,.job-navbar{position:relative}}    
+@media screen and (max-width:600px){.w3-navbar{text-align:center}}
+
+.w3-navbar{float:right!important}
+@media screen and (max-width:600px){.job-topnav a{display:block}.job-navbar li.job-right{float:none!important}} 
+
+.w3-hover-red,
+.w3-navbar p{
+    -webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s
+}
+
+
+.w3-hover-red:hover{color:#fff!important;background-color:#f44336!important}
+

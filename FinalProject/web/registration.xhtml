@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    <h:outputStylesheet library="css" name="registration.css"/>
+    <h:body style="background-color: lightgray">
+    <h:form class="form">
+        <p:messages autoUpdate="true"/> 
+        <p:panelGrid columns="2" styleClass="panelGrid">
+                <p:outputLabel for="cust_fname" value="First Name:   "/>
+                <p:inputText id="cust_fname" value="#{customerMBean.custFname}"  required="true"/>
+                <p:outputLabel for="cust_lname" value="Last Name:   " />
+                <p:inputText id="cust_lname" value="#{customerMBean.custLname}" required="true"/>
+                <p:outputLabel for="cust_mobile" value="Mobile Number:   " />
+                <p:inputText id="cust_mobile" value="#{customerMBean.custMobile}" required="true"/>
+                <p:outputLabel for="cust_email" value="Email:  " />
+                <p:inputText id="cust_email" value="#{customerMBean.custEmail}" required="true"/>
+                <p:outputLabel for="cust_pass" value="Password:   " />
+                <p:password inline="true" feedback="true" match="passv" id="cust_pass" value="#{customerMBean.custPass}"  required="true"/>
+                <p:outputLabel for="passv" value="Verify Password:  "/>
+                <p:password id="passv"  required="true"/>                
+            </p:panelGrid>
+        
+            <p:watermark for="cust_fname" value="First Name"/>
+            <p:watermark for="cust_lname" value="Last Name"/>
+            <p:watermark for="cust_mobile" value="Mobile"/>
+            <p:watermark for="cust_email" value="Email Address"/>
+            <p:watermark for="cust_pass" value="Password"/>
+            <p:watermark for="passv" value="Verify Password"/>
+            <p:commandButton value="Sign Up" validateClient="true" style="margin-left: 45%" action="#{customerMBean.createUser()}"/>
+            
+            
+        </h:form>
+    </h:body>
+</html>
+
+
+

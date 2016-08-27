@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Welcome to Love To Eat</title>
+    </h:head>
+    <h:body>
+         
+        <div id="footer">
+                <ui:include src="footer.xhtml"/>
+            </div>
+            <div id="header" style="padding-top: 8%; width: 100%;">
+                <ui:include src="header.xhtml"/>
+            </div>
+        
+     
+
+        <h:form id="form">
+            <div style="padding-left: 25%; ">
+    <h3 style="margin-top:10%;">Search Restaurant</h3>
+    <p></p>
+    <p:autoComplete id="City" completeMethod="#{inputTextareaView.completeArea}">
+        <p:ajax event="itemSelect" listener="#{inputTextareaView.onItemSelect}" update="City" />
+        </p:autoComplete>
+     <p:watermark for="City" value="Enter City"/>
+    <th></th>
+    <p:autoComplete id="Location" completeMethod="#{inputTextareaView.completeArea1}">
+    <p:ajax event="itemSelect" listener="#{inputTextareaView.onItemSelect1}" update="City" />
+    </p:autoComplete>
+    <p:watermark for="Location" value="Enter Location"/>
+    <p:commandButton value="Submit" update="rest_table" actionListener="#{inputTextareaView.completeArea2}" styleClass="ui-priority-primary" /> 
+   
+            </div>
+        <br>
+          
+        </br>
+        <br/>
+        <br/>
+        <br/>
+        <br>
+          
+        </br>
+        <br/>
+        <br/>
+        <br/>
+        
+         
+        <p:dataTable id="rest_table" value="#{inputTextareaView.rest}" var="r">
+         
+            <p:ajax event="rowSelect" listener="#{inputTextareaView.onRowSelect}" update="" />
+            <p:column headerText="Restaurant">
+                 <h:outputText value="#{r.restName}" />
+    </p:column>
+ 
+ 
+    <p:column headerText="Rating">
+        <h:outputText value="#{r.rating}" />
+    </p:column>
+ 
+    <p:column headerText="Contact">
+        <h:outputText value="#{r.contactNo}" />
+    </p:column>
+ 
+    <p:column headerText="View">
+        <a href="./faces/menu.xhtml"><h:outputText value="View"/></a>
+    </p:column>  
+    
+</p:dataTable>
+        </h:form>
+        
+    </h:body>
+</html>
+

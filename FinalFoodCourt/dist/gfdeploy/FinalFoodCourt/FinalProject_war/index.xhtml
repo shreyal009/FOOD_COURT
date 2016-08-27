@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:outputStylesheet library="css" name="index.css"/>
+    <h:body>
+
+        <h:form id="home">
+             <p:notificationBar position="top" effect="slide" styleClass="top"  autoDisplay="true"  widgetVar="bar" style="opacity: 0.6;">
+            <h:link onclick="#">  <h:outputText value="PrimeFaces Rocks!" style="font-size:36px;" /></h:link>
+            <th></th><h:link onclick="#">  <h:outputText value="PrimeFaces Rocks!" style="font-size:36px;padding-left: 10px;" /></h:link>
+</p:notificationBar>
+            <div id="header">
+                <ui:include src="header.xhtml"/>
+            </div>
+            <div id="display">
+                <ui:include src="display.xhtml" />
+            </div>
+           <div id="content">
+                <ui:include src="content.xhtml" />
+            </div>
+    
+
+<p:dock>
+                <p:menuitem  icon="./resources/icons/login.png" value="Log_In" onclick="PF('loginDialog').show()"/> 
+                <p:menuitem icon="./resources/icons/signup.png" value="Sign_Up" onclick="PF('signUpDialog').show()"/> 
+            </p:dock>
+        
+
+       </h:form>
+        <p:dialog width="500px" height="200px" id="loginDialog" modal="true" widgetVar="loginDialog" closable="true" closeOnEscape="true" fitViewport="true" footer="* marked fields are mandatory" hideEffect="bounce" header="Please Enter Details Below :" showEffect="puff" onShow="PF('signUpDialog').hide()" >
+            <h:form>
+                <p:messages autoUpdate="true"/>
+                <p:panelGrid columns="2" style="margin: auto">
+                    <p:outputLabel for="cust_email" value="Email :  "/>
+                    <p:inputText required="true" requiredMessage="Please Enter An Email ID" id="cust_email" value="#{customerMBean.custEmail}"  />
+                    <p:outputLabel for="cust_pass" value="Password:  " />
+                    <p:password required="true" requiredMessage="Please Enter A Password" id="cust_pass" value="#{customerMBean.custPass}"/>
+                </p:panelGrid>
+                <p:watermark for="cust_email" value="Enter Email"/>
+                <p:watermark for="cust_pass" value="Enter Password"/>
+                <p:commandButton value="Log In" style="margin-left: 45%" action="#{customerMBean.loginUser()}" ajax="true" type="submit"/>
+            </h:form>
+        </p:dialog>
+
+        <p:dialog width="600" draggable="false"  height="500px" modal="true" id="signUpDialog" widgetVar="signUpDialog" closable="true" closeOnEscape="true" fitViewport="true" footer="* marked fields are mandatory" hideEffect="bounce" header="Please Enter Details Below :" showEffect="puff" resizable="true" onShow="PF('loginDialog').hide()">
+            <h:form>
+                <p:messages autoUpdate="true"/> 
+                <p:panelGrid columns="2" styleClass="panelGrid">
+                    <p:outputLabel for="cust_fname" value="First Name:   "/>
+                    <p:inputText size="30" id="cust_fname" value="#{customerMBean.custFname}"  required="true" requiredMessage="Please Enter First Name"/>
+                    <p:outputLabel for="cust_lname" value="Last Name:   " />
+                    <p:inputText size="30" id="cust_lname" value="#{customerMBean.custLname}" required="true" requiredMessage="Please Enter Last Name"/>
+                    <p:outputLabel for="cust_mobile" value="Mobile Number:   " />
+                    <p:inputText size="30" id="cust_mobile" value="#{customerMBean.custMobile}" required="true" requiredMessage="Please Enter Mobile Number"/>
+                    <p:outputLabel for="cust_email" value="Email:  " />
+                    <p:inputText size="30" id="cust_email" value="#{customerMBean.custEmail}" required="true" requiredMessage="Please Enter Email Id"/>
+                    <p:outputLabel for="cust_pass" value="Password:   " />
+                    <p:password size="30" inline="true" match="passv" id="cust_pass" value="#{customerMBean.custPass}"  required="true" requiredMessage="Please Enter Password"/>
+                    <p:outputLabel for="passv" value="Verify Password:  "/>
+                    <p:password size="30" id="passv"  required="true"/>                
+                </p:panelGrid>
+
+                <p:watermark for="cust_fname" value="First Name"/>
+                <p:watermark for="cust_lname" value="Last Name"/>
+                <p:watermark for="cust_mobile" value="Mobile"/>
+                <p:watermark for="cust_email" value="Email Address"/>
+                <p:watermark for="cust_pass" value="Password"/>
+                <p:watermark for="passv" value="Verify Password"/>
+                <p:commandButton value="Sign Up" style="margin-left: 45%" action="#{customerMBean.createUser()}"/>
+            </h:form>
+        </p:dialog>
+    </h:body>
+</html>
+

@@ -1,0 +1,57 @@
+.graphicImage
+{
+    margin: 0 auto;
+    
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#headerImage
+{
+    margin-left: 0;
+    
+}
+
+.switchImages
+{
+    margin-left: 100px;
+}
+#home
+{
+    background-color: white;
+}
+
+.headerText
+{
+    margin-left: 100px;
+    font-family: sans-serif;
+    font-style: italic;
+    
+    font-size: 40px;
+    font-stretch: expanded;
+    color: white;
+    background: darkorange;
+    
+}
+
+#headers
+{
+    background: darkorange; 
+    width: 100%;
+}
+
+#footer
+{
+    transform: translateY(300%);
+}
+
+div#header{
+     background-color: darkorange;
+    width: 100%;
+}

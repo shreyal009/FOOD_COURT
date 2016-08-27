@@ -1,0 +1,42 @@
+.graphicImage
+{
+  
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#headerImage
+{
+    
+}
+
+.switchImages
+{
+    margin-left: 100px;
+}
+#home
+{
+    background-color: white;
+}
+
+.headerText
+{
+    
+    font-family: sans-serif;
+    font-size: 40px;
+    font-stretch: expanded;
+    color: white;
+    background: darkorange;
+    padding-left: 33%;
+}
+
+div#header{
+    width: 100%;
+    background-color: darkorange;
+}
